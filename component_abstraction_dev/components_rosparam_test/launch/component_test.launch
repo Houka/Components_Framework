@@ -1,0 +1,13 @@
+<launch>
+  <!-- Ros param loading -->
+  <rosparam file="$(find components)/config/component_graph.yaml" command="load" ns="components"/>
+
+  <!-- Load in dconfig file that dictates what log to print or ignore -->
+  <env name="ROSCONSOLE_CONFIG_FILE" 
+       value="$(find components)/config/custom_rosconsole.conf"/>
+
+  <node name="components_test" type="components_test" pkg="components" ns="/components" output="screen">
+    <!-- find out how to set this node up to print out messages -->
+  </node>
+
+</launch>

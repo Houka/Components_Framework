@@ -1,0 +1,83 @@
+{
+    "Rover" : {
+        "enabled" : "TRUE",
+        "on_disconnect" : "DIE",
+        "read_level" : "LOG",
+        "write_level" : "LOG",
+        "notify_level" : "ERROR",
+        "dependents" : [ "Diolan", "Drive", "Task", "Peripheral"]
+    },
+    "Drive" : {
+        "enabled" : "TRUE",
+        "on_disconnect" : "DIE",
+        "read_level" : "LOG",
+        "write_level" : "LOG",
+        "notify_level" : "ERROR",
+        "dependents" : [ "DriveMotor"]
+    },
+    "Task" : {
+        "enabled" : "FALSE",
+        "on_disconnect" : "RECONNECT",
+        "read_level" : "LOG",
+        "write_level" : " LOG",
+        "notify_level" : "ERROR",
+        "dependents" : [ "TaskMotor"]
+    },
+    "Peripheral" : {
+        "enabled" : "TRUE",
+        "on_disconnect" : "RECONNECT",
+        "read_level" : "NONE",
+        "write_level" : "NONE",
+        "notify_level" : "ERROR",
+        "dependents" : ["IMU", "PH"]
+    },
+    "DriveMotor" : {
+        "enabled" : "TRUE",
+        "on_disconnect" : "RECONNECT",
+        "read_level" : "NONE",
+        "write_level" : "NONE",
+        "notify_level" : "ERROR",
+        "dependents" : []
+    },
+    "TaskMotor" : {
+        "enabled" : "FALSE",
+        "on_disconnect" : "RECONNECT",
+        "read_level" : "NONE",
+        "write_level" : "NONE",
+        "notify_level" : "ERROR",
+        "dependents" : []
+    },
+    "IMU" : {
+        "enabled" : "TRUE",
+        "on_disconnect" : "RECONNECT",
+        "read_level" : "NONE",
+        "write_level" : "NONE",
+        "notify_level" : "ERROR",
+        "dependents" : []
+    },
+    "PHSensor" : {
+        "enabled" : "TRUE",
+        "on_disconnect" : "RECONNECT",
+        "read_level" : "NONE",
+        "write_level" : "NONE",
+        "notify_level" : "ERROR",
+        "dependents" : []
+    },
+    "Diolan" : {
+        "enabled" : "TRUE",
+        "on_disconnect" : "DIE",
+        "read_level" : "NONE",
+        "write_level" : "NONE",
+        "notify_level" : "ERROR",
+        "dependents" : ["PCA", "IMU", "PhSensor"]
+    },
+    "PCA" : {
+        "enabled" : "TRUE",
+        "on_disconnect" : "RECONNECT",
+        "read_level" : "NONE",
+        "write_level" : "NONE",
+        "notify_level" : "ERROR",
+        "dependents" : ["DriveMotor", "TaskMotor"]
+    }
+    
+}

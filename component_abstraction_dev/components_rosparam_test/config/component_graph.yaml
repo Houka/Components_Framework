@@ -1,0 +1,38 @@
+components: 
+    Rover : 
+        enabled : TRUE
+        on_disconnect : RECONNECT
+        log_level : DEBUG
+        dependents : 
+            - Peripherals 
+            - Drive 
+            - Diolan
+    Peripherals : 
+        enabled : TRUE
+        on_disconnect : RECONNECT
+        log_level : DEBUG
+        dependents : 
+            - PHSensor 
+    PHSensor : 
+        enabled : TRUE
+        on_disconnect : RECONNECT
+        log_level : DEBUG
+        dependents : []
+    Drive : 
+        enabled : TRUE
+        on_disconnect : RECONNECT
+        log_level : DEBUG 
+        dependents : 
+            - Motor 
+    Motor : 
+        enabled : TRUE
+        on_disconnect : RECONNECT
+        log_level : DEBUG
+        dependents : []
+
+    Diolan : 
+        enabled : TRUE
+        on_disconnect : RECONNECT
+        log_level : DEBUG
+        dependents : 
+            - PHSensor

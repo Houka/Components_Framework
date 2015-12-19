@@ -1,0 +1,51 @@
+{
+    "Rover" : {
+        "enabled" : "TRUE",
+        "on_disconnect" : "KILL_ROVER",
+        "log_level" : "ERROR",
+        "dependents" : [ "Peripherals", "Drive", "Diolan"]
+    },
+        "Peripherals" : {
+            "enabled" : "TRUE",
+            "on_disconnect" : "RECONNECT",
+            "log_level" : "ERROR",
+            "dependents" : ["PHSensor", "IMU"]
+        },
+        "PHSensor" : {
+            "enabled" : "TRUE",
+            "on_disconnect" : "KILL_ROVER",
+            "log_level" : "LOG",
+            "dependents" : []
+        },
+        "IMU" : {
+            "enabled" : "TRUE",
+            "on_disconnect" : "RECONNECT",
+            "log_level" : "LOG",
+            "dependents" : []
+        },
+    "Drive" : {
+        "enabled" : "TRUE",
+        "on_disconnect" : "RECONNECT",
+        "log_level" : "ERROR",
+        "dependents" : [ "Motor" ]
+    },
+        "Motor" : {
+            "enabled" : "TRUE",
+            "on_disconnect" : "DISABLE",
+            "log_level" : "LOG",
+            "dependents" : []
+        },
+    "Diolan" : {
+        "enabled" : "TRUE",
+        "on_disconnect" : "KILL_ROVER",
+        "log_level" : "NONE",
+        "dependents" : ["PHSensor", "PCA", "IMU"]
+    },
+    "PCA" : {
+        "enabled" : "TRUE",
+        "on_disconnect" : "RECONNECT",
+        "log_level" : "NONE",
+        "dependents" : ["Motor"]
+    }
+    
+}

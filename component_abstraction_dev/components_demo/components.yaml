@@ -1,0 +1,183 @@
+Rover:
+        enabled : true
+        on_disconnect : KILL_ROVER
+        log_level : ERROR
+        dependents : 
+			- I2C_Interface
+    		- Drive
+    		- Drill
+    		- Arm
+I2C_Interface:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : 
+        	- PWD_Interface
+        	- GPIO_Interface
+        	- ADC_Interface
+        	- PHSensor
+PWD_Interface:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : 
+        	- Motor_drive_l1
+        	- Motor_drive_l2
+        	- Motor_drive_l3
+        	- Motor_drive_r1
+        	- Motor_drive_r2
+        	- Motor_drive_r3
+        	- Motor_drill_height
+        	- Motor_drill_valve
+        	- Motor_drill_spin
+        	- Motor_arm_base
+        	- Motor_arm_shoulder
+        	- Motor_arm_elbow
+        	- Motor_arm_wrist_yaw
+        	- Motor_arm_wrist_pr1
+        	- Motor_arm_wrist_pr2
+        	- Motor_arm_gripper
+GPIO_Interface:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : 
+        	- Motor_drill_height
+        	- Motor_drill_valve
+        	- Motor_drill_spin
+        	- Motor_arm_base
+        	- Motor_arm_shoulder
+        	- Motor_arm_elbow
+        	- Motor_arm_wrist_yaw
+        	- Motor_arm_wrist_pr1
+        	- Motor_arm_wrist_pr2
+        	- Motor_arm_gripper
+ADC_Interface:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : 
+        	- SMCS
+Drive:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents :
+        	- Motor_Drive_l1
+        	- Motor_Drive_l2
+        	- Motor_Drive_l3
+        	- Motor_Drive_r1
+        	- Motor_Drive_r2
+        	- Motor_Drive_r3
+Motor_Drive_l1:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+Motor_Drive_l2:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+Motor_Drive_l3:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+Motor_Drive_r1:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+Motor_Drive_r2:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+Motor_Drive_r3:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+Drill:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : 
+        	- Motor_drill_height
+        	- Motor_drill_valve
+        	- Motor_drill_spin
+        	- PHSensor
+        	- SMCS
+Motor_drill_spin:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+Motor_drill_valve:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+Motor_drill_height:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+PHSensor:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+SMCS:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+Arm:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : 
+        	- Motor_arm_base
+        	- Motor_arm_shoulder
+        	- Motor_arm_elbow
+        	- Motor_arm_wrist_yaw
+        	- Motor_arm_wrist_pr1
+        	- Motor_arm_wrist_pr2
+        	- Motor_arm_gripper
+Motor_arm_base:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+Motor_arm_shoulder:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+Motor_arm_elbow:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+Motor_arm_wrist_yaw:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+Motor_arm_wrist_pr1:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+Motor_arm_wrist_pr2:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
+Motor_arm_gripper:
+        enabled : true
+        on_disconnect : RECONNECT
+        log_level : ERROR
+        dependents : []
